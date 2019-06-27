@@ -69,7 +69,8 @@ function getWeatherData(cityMap, condition, res) {
                         if (val.weather[0].main === condition) {
                             outputObj[val.name] = {
                                 'temperature': val.main.temp,
-                                'wind': val.wind.speed
+                                'wind': val.wind.speed,
+                                'state': cityMap.get(city.name)
                             };
                         }
                     }
