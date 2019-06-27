@@ -1,0 +1,25 @@
+{
+  "name": "openweather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client/index.js",
+  "scripts": {
+    "test": "test",
+    "start-server": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gperanich/openweather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gperanich/openweather/issues"
+  },
+  "homepage": "https://github.com/gperanich/openweather#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
