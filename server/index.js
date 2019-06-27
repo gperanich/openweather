@@ -90,6 +90,7 @@ function getWeatherData(cityMap, condition, res) {
                 } 
             }
         })
+        res.status(200);
         res.send(JSON.stringify(outputObj));
     }).catch((err) => {
         console.log('Too many requests in a row!', err)

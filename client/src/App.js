@@ -7,23 +7,35 @@ class App extends React.Component {
   state = {
     activeCondition: '',
     cityList: {},
-    showCities: false
+    showCities: false,
+    showEmptyRes: false
   }
   handleChange = (val) => {
     console.log('value', val);
     fetch(`/weather/${val}`)
       .then(res => res.json())
       .then((res) => {
-        this.setState({
-          cityList: res,
-          showCities: true
-        })
+        if (Object.keys(res).length) {
+          this.setState({
+            cityList: res,
+            showCities: true,
+            showEmptyRes: false
+          })
+        } else {
+          this.setState({
+            cityList: {},
+            showCities: false,
+            showEmptyRes: true
+          })
+        }
+        
       })
       .catch((err) => {
         console.log('err', err);
       })
   }
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <h1>Weather App</h1>
@@ -43,6 +55,9 @@ class App extends React.Component {
                 )
               })}
             </div>
+          )}
+          {this.state.showEmptyRes && (
+            <p>No cities are experiencing this weather condition!</p>
           )}
       </div>
     );
