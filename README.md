@@ -1,5 +1,5 @@
 # openweather
 
-npm start-server to start node server
+Start Server: npm start-server to start node server
 
-Then cd to client and npm start
+Start Frontend: cd to client and npm start
